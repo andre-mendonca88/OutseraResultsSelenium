@@ -19,13 +19,11 @@ public class E2ESteps {
     public WebDriver driver;
 
     public E2ESteps() {
-        WebDriverManager.firefoxdriver().setup();
+        //WebDriverManager.firefoxdriver().setup(); // To run in other browsers using WebDriverManager
         ChromeOptions options = new ChromeOptions();
-        // Remove for Headless mode on Jenkins
-        //options.addArguments("--headless");
         options.addArguments("--disable-gpu"); //avoid some desktop browsers issues
         this.driver = new ChromeDriver(options);
-        System.out.println("ChromeDriver initialized.");
+        //System.out.println("ChromeDriver initialized."); //Log for confirming the initialization
     }
 
 
